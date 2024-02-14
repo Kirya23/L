@@ -1,0 +1,8 @@
+[
+{
+  "directory": "U:/privki/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -g -o CMakeFiles\\test333.dir\\main.cpp.obj -c U:\\privki\\main.cpp",
+  "file": "U:\\privki\\main.cpp",
+  "output": "CMakeFiles\\test333.dir\\main.cpp.obj"
+}
+]
