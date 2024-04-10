@@ -1,101 +1,67 @@
-#include <iostream>
+#include <opencv2/core/core.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc.hpp>
 #include <string>
-#include <math.h>
+#include <vector>
 
-/*int smth_to_ten(std::string str, int system) {//Перевод из любой в десятичную систему счисления
-	int number, result = 1;
-	number = str.length();
-	if (int(str[0]) > 9) {	//запоминание первого символа если это символ
-		result = (int(toupper(str[0])) - int('x') + 10);
-	}
-	else {	//запоминание первого символа если это число
-		result = (int(str[0]) - int('0'));
-	}
-	for (int i = 1; i < number; i++) {	//основной цикл перевода числа
-		if (int(str[i]) > int('9')) {
-			result = result * system + (int(toupper(str[i])) - int('my_number') + 10);
-		}
-		else {
-			result = result * system + (int(str[i]) - int('0'));
-		}
-	}
-	return result;
-}*/
 
-int smth_to_ten(std::string my_number, int number_system) {//Перевод из любой в десятичную систему счисления
-	int result = 1;
-	if (my_number[0] > '9') {	//запоминание первого символа если это символ
-		result = (int(toupper(my_number[0])) - int('A') + 10);
-	}
-	else {	//запоминание первого символа если это число
-		result = (int(my_number[0]) - int('0'));
-	}
-	for (int i = 1; i < my_number.length(); i++) {	//основной цикл перевода числа
-		if (int(my_number[i]) > int('9')) {
-			result = result * number_system + (int(toupper(my_number[i])) - int('A') + 10);
-		}
-		else {
-			result = result * number_system + (int(my_number[i]) - int('0'));
-		}
-	}
-	return result;
+cv::Mat exponential_function(cv::Mat channel, float exp){
+  cv::Mat table(1, 256, CV_8U);
+  for (int i = 0; i < 256; i++)
+    table.at<uchar>(i) = cv::min((int)pow(i,exp),255);
+  LUT(channel,table,channel);
+  return channel;
 }
+void duo_tone(cv::Mat img){
+  
+  cv::namedWindow("image");
+  int slider1 = 0;
+  int slider2 = 1;
+  int slider3 = 3;
+  int slider4 = 0;
 
-int smth_to_ten1(std::string &my_number, int &number_system) {//Перевод из любой в десятичную систему счисления
-	int result = 1;
-	if (int(my_number[0]) > int('9')) {	//запоминание первого символа если это символ
-		result = (int(toupper(my_number[0])) - int('A') + 10);
-	}
-	else {	//запоминание первого символа если это число
-		result = (int(my_number[0]) - int('0'));
-	}
-	for (int i = 1; i < my_number.length(); i++) {	//основной цикл перевода числа
-		if (int(my_number[i]) > int('9')) {
-			result = result * number_system + (int(toupper(my_number[i])) - int('A') + 10);
-		}
-		else {
-			result = result * number_system + (int(my_number[i]) - int('0'));
-		}
-	}
-	return result;
+  std::string switch1  = "0 : BLUE n1 : GREEN n2 : RED";
+  std::string switch2 = "0 : BLUE n1 : GREEN n2 : RED n3 : NONE";
+  std::string switch3 = "0 : DARK n1 : LIGHT";
+  cv::createTrackbar("exponent","image",&slider1,10);
+  cv::createTrackbar(switch1,"image",&slider2,2);
+  cv::createTrackbar(switch2,"image",&slider3,3);
+  cv::createTrackbar(switch3,"image",&slider4,1);
+
+  while(true){
+    int exp1 = cv::getTrackbarPos("exponent","image");
+    float exp = 1 + exp1/100.0;
+    int s1 = cv::getTrackbarPos(switch1,"image");
+    int s2 = cv::getTrackbarPos(switch2,"image");
+    int s3 = cv::getTrackbarPos(switch3,"image");
+    cv::Mat res = img.clone();
+    cv::Mat channels[3];
+    split(img,channels);
+    for (int i=0; i<3; i++){
+      if ((i == s1)||(i==s2)){
+        channels[i] = exponential_function(channels[i],exp);
+      }
+      else{
+        if (s3){
+          channels[i] = exponential_function(channels[i],2-exp);
+        }
+        else{
+          channels[i] = cv::Mat::zeros(channels[i].size(),CV_8UC1);
+        }
+      }
+    }
+    std::vector<cv::Mat> newChannels{channels[0],channels[1],channels[2]};
+    merge(newChannels,res);
+    imshow("Original",img);
+    imshow("image",res);
+    if (cv::waitKey(1) == 'q')
+                        break;
+                }
+        cv::destroyAllWindows();
 }
-
-int smth_to_ten2(std::string *my_number, int *number_system) {//Перевод из любой в десятичную систему счисления
-	int result = 1;
-	if (int((*my_number)[0]) > int('9')) {	//запоминание первого символа если это символ
-		result = (int(toupper((*my_number)[0])) - int('A') + 10);
-	}
-	else {	//запоминание первого символа если это число
-		result = (int((*my_number)[0]) - int('0'));
-	}
-	for (int i = 1; i < (*my_number).length(); i++) {	//основной цикл перевода числа
-		if (int((*my_number)[i]) > int('9')) {
-			result = result * *number_system + (int(toupper((*my_number)[i])) - int('A') + 10);
-		}
-		else {
-			result = result * *number_system + (int((*my_number)[i]) - int('0'));
-		}
-	}
-	return result;
+int main()
+{
+    cv::Mat image = cv::imread("C:/Users/PiroZHoCheck_2.0/Desktop/KOT.jpeg");
+    duo_tone(image);
+    cv::waitKey(0);
 }
-
-int main() {
-	setlocale(LC_ALL, "ru");
-	std::string my_number;
-	int number_system, result;
-	std::cout << "Введите систему счисления: ";
-	std::cin >> number_system;
-	std::cout << "Введите число: ";
-	std::cin >> my_number;
-	int  *number_system1 = &number_system;
-	std::string  *my_number1 = &my_number;
-	std::cout << my_number << "(" << number_system << ") = ";
-	result = smth_to_ten(my_number, number_system);//по значению
-	std::cout << result <<"(10)"<< '\n';
-	result= smth_to_ten1(my_number, number_system);//по ссылке
-	std::cout << result << "(10)" << '\n';
-	result = smth_to_ten2(my_number1, number_system1);//по указатнлю
-	std::cout << result << "(10)" << '\n';
-	return 0;
-}
-

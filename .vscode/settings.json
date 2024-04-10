@@ -1,6 +1,8 @@
 {
     "files.associations": {
-        "sstream": "cpp",
-        "functional": "cpp"
+        "string": "cpp",
+        "format": "cpp",
+        "cmath": "cpp",
+        "*.tcc": "cpp"
     }
 }

@@ -1,11 +1,5 @@
-cmake_minimum_required(VERSION 3.0.0)
-project(test333 VERSION 0.1.0 LANGUAGES C CXX)
-
-include(CTest)
-enable_testing()
-
-add_executable(test333 main.cpp)
-
-set(CPACK_PROJECT_NAME ${PROJECT_NAME})
-set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
-include(CPack)
+cmake_minimum_required(VERSION 3.5) # Минимальная версия CMake
+project(ObjectDetection) # Имя проекта
+find_package(OpenCV REQUIRED) # Поиск пакета OpenCV
+add_executable(ObjectDetection main.cpp) # Создание исполняемого файла
+target_link_libraries(ObjectDetection ${OpenCV_LIBS}) # Линковка с библиотеками OpenCV

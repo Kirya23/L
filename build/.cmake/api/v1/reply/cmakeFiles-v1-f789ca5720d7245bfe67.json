@@ -151,49 +151,37 @@
 			"path" : "C:/msys64/mingw64/share/cmake/Modules/CMakeCommonLanguageInclude.cmake"
 		},
 		{
-			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "C:/msys64/mingw64/share/cmake/Modules/CTest.cmake"
+			"path" : "C:/msys64/mingw64/lib/cmake/opencv4/OpenCVConfig-version.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/msys64/mingw64/lib/cmake/opencv4/OpenCVConfig.cmake"
 		},
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "C:/msys64/mingw64/share/cmake/Modules/CTestUseLaunchers.cmake"
+			"path" : "C:/msys64/mingw64/share/cmake/Modules/FindPackageHandleStandardArgs.cmake"
 		},
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "C:/msys64/mingw64/share/cmake/Modules/CTestTargets.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "C:/msys64/mingw64/share/cmake/Modules/DartConfiguration.tcl.in"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "C:/msys64/mingw64/share/cmake/Modules/CPack.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "C:/msys64/mingw64/share/cmake/Modules/CPackComponent.cmake"
+			"path" : "C:/msys64/mingw64/share/cmake/Modules/FindPackageMessage.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "C:/msys64/mingw64/share/cmake/Templates/CPackConfig.cmake.in"
+			"path" : "C:/msys64/mingw64/lib/cmake/opencv4/OpenCVModules.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "C:/msys64/mingw64/share/cmake/Templates/CPackConfig.cmake.in"
+			"path" : "C:/msys64/mingw64/lib/cmake/opencv4/OpenCVModules-release.cmake"
 		}
 	],
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "U:/privki/build",
-		"source" : "U:/privki"
+		"build" : "C:/Users/PiroZHoCheck_2.0/Desktop/openCV/build",
+		"source" : "C:/Users/PiroZHoCheck_2.0/Desktop/openCV"
 	},
 	"version" : 
 	{
