@@ -1,67 +1,37 @@
-#include <opencv2/core/core.hpp>
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/imgproc.hpp>
-#include <string>
-#include <vector>
+#include <iostream>
+#include "Papka1/Functions.h"
 
-
-cv::Mat exponential_function(cv::Mat channel, float exp){
-  cv::Mat table(1, 256, CV_8U);
-  for (int i = 0; i < 256; i++)
-    table.at<uchar>(i) = cv::min((int)pow(i,exp),255);
-  LUT(channel,table,channel);
-  return channel;
-}
-void duo_tone(cv::Mat img){
-  
-  cv::namedWindow("image");
-  int slider1 = 0;
-  int slider2 = 1;
-  int slider3 = 3;
-  int slider4 = 0;
-
-  std::string switch1  = "0 : BLUE n1 : GREEN n2 : RED";
-  std::string switch2 = "0 : BLUE n1 : GREEN n2 : RED n3 : NONE";
-  std::string switch3 = "0 : DARK n1 : LIGHT";
-  cv::createTrackbar("exponent","image",&slider1,10);
-  cv::createTrackbar(switch1,"image",&slider2,2);
-  cv::createTrackbar(switch2,"image",&slider3,3);
-  cv::createTrackbar(switch3,"image",&slider4,1);
-
-  while(true){
-    int exp1 = cv::getTrackbarPos("exponent","image");
-    float exp = 1 + exp1/100.0;
-    int s1 = cv::getTrackbarPos(switch1,"image");
-    int s2 = cv::getTrackbarPos(switch2,"image");
-    int s3 = cv::getTrackbarPos(switch3,"image");
-    cv::Mat res = img.clone();
-    cv::Mat channels[3];
-    split(img,channels);
-    for (int i=0; i<3; i++){
-      if ((i == s1)||(i==s2)){
-        channels[i] = exponential_function(channels[i],exp);
-      }
-      else{
-        if (s3){
-          channels[i] = exponential_function(channels[i],2-exp);
-        }
-        else{
-          channels[i] = cv::Mat::zeros(channels[i].size(),CV_8UC1);
-        }
-      }
-    }
-    std::vector<cv::Mat> newChannels{channels[0],channels[1],channels[2]};
-    merge(newChannels,res);
-    imshow("Original",img);
-    imshow("image",res);
-    if (cv::waitKey(1) == 'q')
-                        break;
-                }
-        cv::destroyAllWindows();
-}
 int main()
 {
-    cv::Mat image = cv::imread("C:/Users/PiroZHoCheck_2.0/Desktop/KOT.jpeg");
-    duo_tone(image);
-    cv::waitKey(0);
+    std::cout << "Задание 1:";
+    int input_1, input_2, devinded, devinder;
+    std::cout << "Enter number: ";
+    std::cin >> input_1;
+    std::cout << "Enter number2: ";
+    std::cin >> input_2;
+    Factorial(input_1);
+    Pow(input_1);
+    Sumpow(input_1, input_2);
+    Diff(input_1, input_2);
+    Fibonachi(input_1);
+    std::cout << "////////////" << "\n";
+    std::cout << "Задание 2:" << "\n";
+    signed int dividend, divisor;
+    std::cout << "Введите делимое: ";
+    std::cin >> dividend;
+    std::cout << "Введите делитель: ";
+    std::cin >> divisor;
+    Func_for_division(dividend, divisor);
+    std::cout << "////////////" << "\n";
+    std::cout << "Задание 3:" << "\n";
+    std::cout << "Начало функции main" << std::endl;
+    try
+    {
+        level2();
+    }
+    catch (...)
+    {
+        std::cout << "Обработка неизвестного исключения в функции main" << std::endl;
+    }
+    std::cout << "Конец функции main" << std::endl;
 }
