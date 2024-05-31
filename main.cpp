@@ -1,101 +1,67 @@
+#include "Papka1/Matrix.h"
+#include "Papka1/Convolution.h"
+#include "Papka1/Subsample.h"
 #include <iostream>
-#include <string>
-#include <math.h>
-
-/*int smth_to_ten(std::string str, int system) {//Перевод из любой в десятичную систему счисления
-	int number, result = 1;
-	number = str.length();
-	if (int(str[0]) > 9) {	//запоминание первого символа если это символ
-		result = (int(toupper(str[0])) - int('x') + 10);
-	}
-	else {	//запоминание первого символа если это число
-		result = (int(str[0]) - int('0'));
-	}
-	for (int i = 1; i < number; i++) {	//основной цикл перевода числа
-		if (int(str[i]) > int('9')) {
-			result = result * system + (int(toupper(str[i])) - int('my_number') + 10);
-		}
-		else {
-			result = result * system + (int(str[i]) - int('0'));
-		}
-	}
-	return result;
-}*/
-
-int smth_to_ten(std::string my_number, int number_system) {//Перевод из любой в десятичную систему счисления
-	int result = 1;
-	if (my_number[0] > '9') {	//запоминание первого символа если это символ
-		result = (int(toupper(my_number[0])) - int('A') + 10);
-	}
-	else {	//запоминание первого символа если это число
-		result = (int(my_number[0]) - int('0'));
-	}
-	for (int i = 1; i < my_number.length(); i++) {	//основной цикл перевода числа
-		if (int(my_number[i]) > int('9')) {
-			result = result * number_system + (int(toupper(my_number[i])) - int('A') + 10);
-		}
-		else {
-			result = result * number_system + (int(my_number[i]) - int('0'));
-		}
-	}
-	return result;
-}
-
-int smth_to_ten1(std::string &my_number, int &number_system) {//Перевод из любой в десятичную систему счисления
-	int result = 1;
-	if (int(my_number[0]) > int('9')) {	//запоминание первого символа если это символ
-		result = (int(toupper(my_number[0])) - int('A') + 10);
-	}
-	else {	//запоминание первого символа если это число
-		result = (int(my_number[0]) - int('0'));
-	}
-	for (int i = 1; i < my_number.length(); i++) {	//основной цикл перевода числа
-		if (int(my_number[i]) > int('9')) {
-			result = result * number_system + (int(toupper(my_number[i])) - int('A') + 10);
-		}
-		else {
-			result = result * number_system + (int(my_number[i]) - int('0'));
-		}
-	}
-	return result;
-}
-
-int smth_to_ten2(std::string *my_number, int *number_system) {//Перевод из любой в десятичную систему счисления
-	int result = 1;
-	if (int((*my_number)[0]) > int('9')) {	//запоминание первого символа если это символ
-		result = (int(toupper((*my_number)[0])) - int('A') + 10);
-	}
-	else {	//запоминание первого символа если это число
-		result = (int((*my_number)[0]) - int('0'));
-	}
-	for (int i = 1; i < (*my_number).length(); i++) {	//основной цикл перевода числа
-		if (int((*my_number)[i]) > int('9')) {
-			result = result * *number_system + (int(toupper((*my_number)[i])) - int('A') + 10);
-		}
-		else {
-			result = result * *number_system + (int((*my_number)[i]) - int('0'));
-		}
-	}
-	return result;
-}
 
 int main() {
-	setlocale(LC_ALL, "ru");
-	std::string my_number;
-	int number_system, result;
-	std::cout << "Введите систему счисления: ";
-	std::cin >> number_system;
-	std::cout << "Введите число: ";
-	std::cin >> my_number;
-	int  *number_system1 = &number_system;
-	std::string  *my_number1 = &my_number;
-	std::cout << my_number << "(" << number_system << ") = ";
-	result = smth_to_ten(my_number, number_system);//по значению
-	std::cout << result <<"(10)"<< '\n';
-	result= smth_to_ten1(my_number, number_system);//по ссылке
-	std::cout << result << "(10)" << '\n';
-	result = smth_to_ten2(my_number1, number_system1);//по указатнлю
-	std::cout << result << "(10)" << '\n';
-	return 0;
-}
+    srand(time(NULL));
+    // Создание матриц
+    Matrix matrix_0;
+    Matrix matrix_1(4, 4);
+    Matrix matrix_2(4, 4);
 
+    // Использование операторов
+    Matrix matrix_3 = matrix_1 + matrix_2;
+    Matrix matrix_4 = matrix_1 - matrix_2;
+    Matrix matrix_5 = matrix_1 * 7;
+    Matrix matrix_6 = matrix_1 * matrix_2;
+    Matrix matrix_7 = matrix_1;
+    
+
+    // Вывод матриц
+    std::cout << "Матрица 0: \n" << matrix_0 << std::endl;
+    std::cout << "Матрица 1:\n" << matrix_1 << std::endl;
+    std::cout << "Матрица 2:\n" << matrix_2 << std::endl;
+    std::cout << "Матрица 3 (сумма двух матриц):\n" << matrix_3 << std::endl;
+    std::cout << "Матрица 4 (разность двух матриц):\n" << matrix_4 << std::endl;
+    std::cout << "Матрица 5 (умножение матрицы на число):\n" << matrix_5 << std::endl;
+    std::cout << "Матрица 6 (умножение двух матриц):\n" << matrix_6 << std::endl;
+    std::cout << "Проверка равенства матриц " << (matrix_1 == matrix_2 ? "true" : "false") << std::endl;
+    std::cout << "Максимальное число матрицы (1) " << matrix_1.getMaxValue() << std::endl;
+    std::cout << "Максимальное число матрицы (2) " << matrix_2.getMaxValue() << std::endl;
+    std::cout << "Матрица 7: \n" << matrix_7 << std::endl;
+    std::cout << "Равенство матриц" << (matrix_1 == matrix_7 ? "true" : "false") << std::endl;
+
+    Matrix matrix_8(3, 3);
+    std::cout << "Введите элементы матрицы m8: " << std::endl;
+    std::cin >> matrix_8;
+
+    // Вывод матрицы
+    std::cout << "Матрица m8: \n" << matrix_8 << std::endl;
+
+    // Создание матриц
+    Matrix input1(5, 5);
+    Matrix input2(3, 3);
+    std::cout << "input1:\n" << input1 << std::endl;
+    std::cout << "input2:\n" << input2 << std::endl;
+    
+    Convolution conv(input1, input2);
+
+    // вывод результата
+    std::cout << "Результат свёртки:\n" << conv << std::endl;
+
+
+    Matrix input(5, 5);
+    std::cout << "input:\n" << input << std::endl;
+    std::cout << "max input:\n" << input.getMaxValue() << std::endl;
+    SubsamplingMatrix subsamplingMatrix(input);
+    Matrix maxValuesMatrix = subsamplingMatrix.getMaxValuesMatrix();
+    std::cout << "Результат подвыборки:\n";
+    for (int i = 0; i < maxValuesMatrix.rows; i++) {
+        for (int j = 0; j < maxValuesMatrix.cols; j++) {
+            std::cout << maxValuesMatrix.data[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+    return 0;
+}

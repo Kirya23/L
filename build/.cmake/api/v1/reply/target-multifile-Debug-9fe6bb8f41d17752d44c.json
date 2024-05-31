@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "test333.exe"
+			"path" : "multifile.exe"
 		},
 		{
-			"path" : "test333.pdb"
+			"path" : "multifile.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -27,7 +27,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 7,
+				"line" : 4,
 				"parent" : 0
 			}
 		]
@@ -44,11 +44,14 @@
 			"language" : "CXX",
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1,
+				2,
+				3
 			]
 		}
 	],
-	"id" : "test333::@6890427a1f51a3e7e1df",
+	"id" : "multifile::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -68,8 +71,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "test333",
-	"nameOnDisk" : "test333.exe",
+	"name" : "multifile",
+	"nameOnDisk" : "multifile.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -81,7 +84,10 @@
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1,
+				2,
+				3
 			]
 		}
 	],
@@ -91,6 +97,24 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Matrix.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Convolution.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Subsample.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
