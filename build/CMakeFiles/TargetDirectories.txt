@@ -1,3 +1,0 @@
-C:/Users/PiroZHoCheck_2.0/Desktop/Programing2-1/build/CMakeFiles/multifile.dir
-C:/Users/PiroZHoCheck_2.0/Desktop/Programing2-1/build/CMakeFiles/edit_cache.dir
-C:/Users/PiroZHoCheck_2.0/Desktop/Programing2-1/build/CMakeFiles/rebuild_cache.dir
