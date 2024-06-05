@@ -1,0 +1,11 @@
+# ninja log v5
+9	34	0	C:/Users/PiroZHoCheck_2.0/Desktop/ctest-main/build/CMakeFiles/cmake.verify_globs	515b022d145ea277
+37	110	7392429122971126	tests/CMakeFiles/test_2.dir/test_2.cpp.obj	3154a8dfd02eefee
+40	116	7392429123020970	tests/CMakeFiles/test_3.dir/test_3.cpp.obj	f9558721d6758078
+33	121	7392429123070801	tests/CMakeFiles/test_1.dir/test_1.cpp.obj	b566aab921ff4716
+35	277	7392429124635565	tests/CMakeFiles/test_1.dir/__/task.cpp.obj	1aba123a5eaed73a
+42	268	7392429124515961	tests/CMakeFiles/test_3.dir/__/task.cpp.obj	578018358fcc4f8b
+38	264	7392429124506007	tests/CMakeFiles/test_2.dir/__/task.cpp.obj	b7e23fd70fb54d69
+268	356	7392429125393028	tests/test_3.exe	87eff9cc7bacd103
+264	360	7392429125432898	tests/test_2.exe	79894c4fb7d054bf
+278	360	7392429125432898	tests/test_1.exe	1681ee82c148190e

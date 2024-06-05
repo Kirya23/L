@@ -1,0 +1,38 @@
+[
+{
+  "directory": "C:/Users/PiroZHoCheck_2.0/Desktop/ctest-main/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/PiroZHoCheck_2.0/Desktop/ctest-main -g -std=gnu++17 -Wall -Wextra -pedantic -Werror -g -o tests\\CMakeFiles\\test_1.dir\\test_1.cpp.obj -c C:\\Users\\PiroZHoCheck_2.0\\Desktop\\ctest-main\\tests\\test_1.cpp",
+  "file": "C:\\Users\\PiroZHoCheck_2.0\\Desktop\\ctest-main\\tests\\test_1.cpp",
+  "output": "tests\\CMakeFiles\\test_1.dir\\test_1.cpp.obj"
+},
+{
+  "directory": "C:/Users/PiroZHoCheck_2.0/Desktop/ctest-main/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/PiroZHoCheck_2.0/Desktop/ctest-main -g -std=gnu++17 -Wall -Wextra -pedantic -Werror -g -o tests\\CMakeFiles\\test_1.dir\\__\\task.cpp.obj -c C:\\Users\\PiroZHoCheck_2.0\\Desktop\\ctest-main\\task.cpp",
+  "file": "C:\\Users\\PiroZHoCheck_2.0\\Desktop\\ctest-main\\task.cpp",
+  "output": "tests\\CMakeFiles\\test_1.dir\\__\\task.cpp.obj"
+},
+{
+  "directory": "C:/Users/PiroZHoCheck_2.0/Desktop/ctest-main/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/PiroZHoCheck_2.0/Desktop/ctest-main -g -std=gnu++17 -Wall -Wextra -pedantic -Werror -g -o tests\\CMakeFiles\\test_2.dir\\test_2.cpp.obj -c C:\\Users\\PiroZHoCheck_2.0\\Desktop\\ctest-main\\tests\\test_2.cpp",
+  "file": "C:\\Users\\PiroZHoCheck_2.0\\Desktop\\ctest-main\\tests\\test_2.cpp",
+  "output": "tests\\CMakeFiles\\test_2.dir\\test_2.cpp.obj"
+},
+{
+  "directory": "C:/Users/PiroZHoCheck_2.0/Desktop/ctest-main/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/PiroZHoCheck_2.0/Desktop/ctest-main -g -std=gnu++17 -Wall -Wextra -pedantic -Werror -g -o tests\\CMakeFiles\\test_2.dir\\__\\task.cpp.obj -c C:\\Users\\PiroZHoCheck_2.0\\Desktop\\ctest-main\\task.cpp",
+  "file": "C:\\Users\\PiroZHoCheck_2.0\\Desktop\\ctest-main\\task.cpp",
+  "output": "tests\\CMakeFiles\\test_2.dir\\__\\task.cpp.obj"
+},
+{
+  "directory": "C:/Users/PiroZHoCheck_2.0/Desktop/ctest-main/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/PiroZHoCheck_2.0/Desktop/ctest-main -g -std=gnu++17 -Wall -Wextra -pedantic -Werror -g -o tests\\CMakeFiles\\test_3.dir\\test_3.cpp.obj -c C:\\Users\\PiroZHoCheck_2.0\\Desktop\\ctest-main\\tests\\test_3.cpp",
+  "file": "C:\\Users\\PiroZHoCheck_2.0\\Desktop\\ctest-main\\tests\\test_3.cpp",
+  "output": "tests\\CMakeFiles\\test_3.dir\\test_3.cpp.obj"
+},
+{
+  "directory": "C:/Users/PiroZHoCheck_2.0/Desktop/ctest-main/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/PiroZHoCheck_2.0/Desktop/ctest-main -g -std=gnu++17 -Wall -Wextra -pedantic -Werror -g -o tests\\CMakeFiles\\test_3.dir\\__\\task.cpp.obj -c C:\\Users\\PiroZHoCheck_2.0\\Desktop\\ctest-main\\task.cpp",
+  "file": "C:\\Users\\PiroZHoCheck_2.0\\Desktop\\ctest-main\\task.cpp",
+  "output": "tests\\CMakeFiles\\test_3.dir\\__\\task.cpp.obj"
+}
+]
