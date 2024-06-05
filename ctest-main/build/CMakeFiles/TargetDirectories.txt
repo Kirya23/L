@@ -1,9 +1,0 @@
-C:/Users/PiroZHoCheck_2.0/Desktop/ctest-main/build/CMakeFiles/test.dir
-C:/Users/PiroZHoCheck_2.0/Desktop/ctest-main/build/CMakeFiles/edit_cache.dir
-C:/Users/PiroZHoCheck_2.0/Desktop/ctest-main/build/CMakeFiles/rebuild_cache.dir
-C:/Users/PiroZHoCheck_2.0/Desktop/ctest-main/build/tests/CMakeFiles/test_1.dir
-C:/Users/PiroZHoCheck_2.0/Desktop/ctest-main/build/tests/CMakeFiles/test_2.dir
-C:/Users/PiroZHoCheck_2.0/Desktop/ctest-main/build/tests/CMakeFiles/test_3.dir
-C:/Users/PiroZHoCheck_2.0/Desktop/ctest-main/build/tests/CMakeFiles/test.dir
-C:/Users/PiroZHoCheck_2.0/Desktop/ctest-main/build/tests/CMakeFiles/edit_cache.dir
-C:/Users/PiroZHoCheck_2.0/Desktop/ctest-main/build/tests/CMakeFiles/rebuild_cache.dir
